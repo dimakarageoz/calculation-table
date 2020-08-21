@@ -1,0 +1,10 @@
+<div class="flex-h-center flex-v-center w-100">
+    <div class="input-group">
+        <input class="form-control"
+               type="number"
+               [value]="value"
+               (change)="valueChange(inputRef.value)"
+               #inputRef
+        >
+    </div>
+</div>

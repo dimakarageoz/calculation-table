@@ -1,0 +1,51 @@
+@import "../../../../styles/colors";
+
+.table-container {
+  background: $color-grey;
+  padding: 8px;
+  border-radius: 3px;
+  display: flex;
+}
+
+.static-cell-mode {
+  .overflow-wrapper {
+    width: initial;
+  }
+
+  .cell:not(.header-cell) {
+    min-width: 200px !important;
+  }
+}
+
+.overflow-wrapper {
+  border-radius: 4px;
+  width: 100%;
+}
+
+.row {
+  min-height: 50px;
+  display: flex;
+  background: white;
+
+  &:not(:first-of-type) {
+    margin-top: 1px;
+  }
+}
+
+.header-row {
+  background: #0f52ba;
+  color: #ffffff;
+}
+
+.cell {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+}
+
+.header-cell {
+  font-weight: bold;
+  font-size: 16px;
+}

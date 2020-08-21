@@ -1,0 +1,23 @@
+<table class="table">
+    <tbody>
+        <tr *ngFor="let row of rows; index as rowIndex;">
+            <td *ngFor="let cell of maxRowMock; index as cellIndex; last as cellLast" class="align-middle">
+                <ng-container *ngIf="cellTemplate; else defaultCellView">
+                    <ng-container *ngTemplateOutlet="
+                                       cellTemplate;
+                                       context: {
+                                           row: rowIndex,
+                                           cell: cellIndex,
+                                           last: cellLast,
+                                           value: row[cellIndex]
+                                       }
+                                  "
+                    ></ng-container>
+                </ng-container>
+                <ng-template #defaultCellView>
+                    {{ cell }}
+                </ng-template>
+            </td>
+        </tr>
+    </tbody>
+</table>

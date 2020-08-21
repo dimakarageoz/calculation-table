@@ -1,0 +1,18 @@
+
+.trash-icon {
+  font-size: 18px;
+  opacity: 0.5;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 180ms ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}

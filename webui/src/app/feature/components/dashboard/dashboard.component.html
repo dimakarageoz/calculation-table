@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="table-wrapper">
+        <app-table [rows]="tableData"
+                   [cellTemplate]="cellTemp"
+        ></app-table>
+    </div>
+
+    <app-action-panel [onlyRowCreate]="!rows || !rows.length"></app-action-panel>
+</div>
+
+<app-loader [loading]="loader"></app-loader>
+
+<ng-template let-value="value"
+             let-row="row"
+             let-cell="cell"
+             #cellTemp
+>
+    <app-calculation-cell *ngIf="value && isNumber(value.value)"
+                          [value]="value && value.value"
+                          [row]="rows[row - 1]?._id"
+                          [cell]="cell"
+    ></app-calculation-cell>
+
+    <ng-container *ngIf="value && value.drop">
+
+        <app-remove-cell *ngIf="row === 0"
+                         [cell]="cell"
+        ></app-remove-cell>
+
+        <app-remove-cell *ngIf="row !== 0"
+                         [row]="rows[row - 1]?._id"
+        ></app-remove-cell>
+    </ng-container>
+
+    <div *ngIf="value && isNumber(value.calculated)"
+         class="text-center"
+    >
+        <b>
+            {{ value.calculated }}
+        </b>
+    </div>
+</ng-template>

@@ -1,0 +1,30 @@
+@import "~src/styles/colors";
+@import "~src/styles/common";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open-Sans', 'arial', sans-serif;
+  font-weight: normal;
+  color: $font-color;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input, button {
+  font-family: 'Open-Sans', 'arial', sans-serif;
+}
+

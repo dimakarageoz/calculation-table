@@ -1,0 +1,38 @@
+<div class="footer-block">
+    <ng-container *ngIf="!onlyRowCreate">
+        <app-button *ngIf="type"
+                    [type]="'warning'"
+                    (click)="calculate()"
+        >
+            Remove Calculate
+        </app-button>
+
+        <app-button *ngIf="!type || type === 'multiply'"
+                    [type]="'success'"
+                    (click)="calculate('sum')"
+        >
+            Calculate Sum
+        </app-button>
+
+        <app-button *ngIf="!type || type === 'sum'"
+                    [type]="'success'"
+                    (click)="calculate('multiply')"
+        >
+            Calculate Multiply
+        </app-button>
+    </ng-container>
+
+    <app-button [primary]="true"
+                (click)="createRow()"
+    >
+        Create row
+    </app-button>
+
+    <ng-container *ngIf="!onlyRowCreate">
+        <app-button [primary]="true"
+                    (click)="addColumn()"
+        >
+            Add column
+        </app-button>
+    </ng-container>
+</div>
